@@ -1,0 +1,56 @@
+<div class="container-fluid " id="main">
+    <div class="">
+      <!-- <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div> -->
+      <div class="">
+        <div class="login d-flex align-items-center py-3" >
+          <div class="container">
+            <div class="row">
+              <div class="col-md-9 col-lg-8 mx-auto">
+                <h3 class="heading mb-3" id="heading">Monthly Expense</h3>
+  
+                <form [formGroup]="monthlyExpenseForm" (ngSubmit)="onSubmit()">
+                  <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingExpenseEmail" placeholder="name@example.com" formControlName="ExpenseEmail" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.ExpenseEmail.errors }"  id="inputExpenseEmail4">
+                    <div *ngIf="submitted && f.ExpenseEmail.errors" class="invalid-feedback">
+                      <div *ngIf="f.ExpenseEmail.errors.required">Email is required</div>
+                      <div *ngIf="f.ExpenseEmail.errors.ExpenseEmail">Email must be a valid Email address</div>
+                   </div>
+                    <label for="floatingExpenseEmail">Your Email-Id </label>
+                  </div>
+
+                  <div class="d-grid">
+                    <button class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2" type="submit">Get Monthly Expense</button>
+                  </div>
+                </form>
+
+                <div class="table_bg" *ngIf = "monthlyExpense != null">
+                    <table datatable="ng" dt-options="dtOptions" dt-column-defs="dtColumnDefs" class="table table-striped table-bordered dt-responsive nowrap res_table" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <!-- <th>#</th> -->
+                                <th>UserName</th>
+                                <th>Month</th>
+                                <th>TotalCredit</th>
+                                <th>TotalDebit</th>
+                                <th>TotalBalence</th>
+                            </tr>
+                        </thead>
+                        <tbody ng-hide="loading">
+                            <tr *ngFor="let monthlyExpenses of monthlyExpense" ng-cloak ng-mouseenter="hover(docType)" ng-mouseleave="hover(docType)">
+                                <!-- <td>{{$index}}</td> -->
+                                <td>{{monthlyExpenses.UserName}}</td>
+                                <td>{{monthlyExpenses.Month}}</td>
+                                <td>{{monthlyExpenses.TotalCredit | currency :"INR"}}</td>
+                                <td>{{monthlyExpenses.TotalDebit | currency :"INR"}}</td>
+                                <td>{{monthlyExpenses.TotalBalence | currency :"INR"}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+

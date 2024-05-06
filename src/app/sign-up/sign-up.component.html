@@ -1,0 +1,77 @@
+<section class="vh-100" style="background-color: #eee;">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-12 col-xl-11">
+          <div class="card text-black" style="border-radius: 25px;">
+            <div class="card-body">
+              <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+  
+                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+  
+                  <form class="mx-1 mx-md-4" [formGroup]="SignUpForm" (ngSubmit)="onSubmit()">
+
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="UserName" placeholder="Parth" formControlName="UserName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.UserName.errors }"  id="inputUserName">
+                        <div *ngIf="submitted && f.UserName.errors" class="invalid-feedback">
+                          <div *ngIf="f.UserName.errors.required">User name is required</div>
+                       </div>
+                        <label for="UserName"> Your Name</label>
+                    </div>
+  
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="UserEmail" placeholder="name@example.com" formControlName="UserEmail" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.UserEmail.errors }"  id="inputUserEmail">
+                        <div *ngIf="submitted && f.UserEmail.errors" class="invalid-feedback">
+                          <div *ngIf="f.UserEmail.errors.required">Email is required</div>
+                          <div *ngIf="f.UserEmail.errors.UserEmail">Email must be a valid email address</div>
+                        </div>
+                        <label for="floatingInput">Email address</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="number" class="form-control" id="UserPhone" placeholder="9898989898" formControlName="UserPhone" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.UserPhone.errors }"  id="inputUserPhone">
+                        <div *ngIf="submitted && f.UserPhone.errors" class="invalid-feedback">
+                            <div *ngIf="f.UserPhone.errors.required">Phone umber is required</div>
+                            <div *ngIf="f.UserPhone.errors.minLength(10)">Phone Number must be a of 10 digit</div>
+                            <!-- <div *ngIf="f.UserPhone.errors.maxLength(15)">maximum length of phonw number is 15 digit</div> -->
+                       </div>
+                        <label for="UserName"> Your Phone Number</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="UserAddress" placeholder="Vastral,Ahmedabad,Gujarat" formControlName="UserAddress" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.UserAddress.errors }"  id="inputUserAddress">
+                        <div *ngIf="submitted && f.UserAddress.errors" class="invalid-feedback">
+                            <div *ngIf="f.UserAddress.errors.required">Address is required</div>
+                            <div *ngIf="f.UserAddress.errors.UserAddress">AAddress is required</div>
+                       </div>
+                        <label for="UserName"> Your Address</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="UserPassword" placeholder="Password" formControlName="UserPassword"[ngClass]="{ 'is-invalid': submitted && f.UserPassword.errors }" id="inputUserPasswoerd">
+                        <div *ngIf="submitted && f.UserPassword.errors" class="invalid-feedback">
+                            <div *ngIf="f.UserPassword.errors.required">Password is required</div>
+                        </div>
+                        <label for="floatingPassword">Password</label>
+                    </div>
+      
+                    <div class="d-grid">
+                    <button class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2" type="submit">Sign Up</button>
+                    </div>
+  
+                  </form>
+  
+                </div>
+                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+  
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                    class="img-fluid" alt="Sample image">
+  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

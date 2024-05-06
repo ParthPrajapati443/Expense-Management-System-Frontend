@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>Expense Management System</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body class="w3-content" style="max-width:1300px">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a routerLink="/Home">Home</a></li>
+              <li class="breadcrumb-item"><a routerLink="/Login">Login</a></li>
+              <li class="breadcrumb-item active" aria-current="page">
+                <a routerLink="/SignUp">Sign Up</a>
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </nav>
+    <div class="w3-row">
+        <div class="w3-full w3-Blue w3-container w3-center" style="height:700px">
+        <div class="w3-padding-64">
+            <h1>Expense Management System</h1>
+        </div>
+        <div class="w3" >
+            <div class="options"><a routerLink="/Login" class="w3-button w3-block w3-hover-blue-grey w3-padding-16">Login</a></div>
+            <div class="options"><a routerLink="/SignUp" class="w3-button w3-block w3-hover-blue-grey w3-padding-16">SignUp</a></div>
+            <div class="options"><a routerLink="/SaveExpense" class="w3-button w3-block w3-hover-teal w3-padding-16">Save Expense</a></div>
+            <div class="options"><a routerLink="/GetExpense" class="w3-button w3-block w3-hover-dark-grey w3-padding-16">Get Expense</a></div>
+            <div class="options"><a routerLink="/MonthlyExpense" class="w3-button w3-block w3-hover-brown w3-padding-16">Monthly Expense</a></div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w3-container w3-black w3-padding-16">
+        <p>Powered by <a routerLink="/Login" >EMS</a></p>
+    </footer>
+</body>
+</html>

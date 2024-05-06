@@ -1,0 +1,68 @@
+<div class="container-fluid " id="main">
+    <div class="">
+      <!-- <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div> -->
+      <div class="">
+        <div class="login d-flex align-items-center py-3" >
+          <div class="container">
+            <div class="row">
+              <div class="col-md-9 col-lg-8 mx-auto">
+                <h3 class="heading mb-3" id="heading">Save Expense</h3>
+  
+                <form [formGroup]="saveExpenseForm" (ngSubmit)="onSubmit()">
+                  <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingExpenseEmail" placeholder="name@example.com" formControlName="ExpenseEmail" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.ExpenseEmail.errors }"  id="inputExpenseEmail4">
+                    <div *ngIf="submitted && f.ExpenseEmail.errors" class="invalid-feedback">
+                      <div *ngIf="f.ExpenseEmail.errors.required">Email is required</div>
+                      <div *ngIf="f.ExpenseEmail.errors.ExpenseEmail">Email must be a valid Email address</div>
+                   </div>
+                    <label for="floatingExpenseEmail">Your Email-Id </label>
+                  </div>
+
+                  <div class="form-floating mb-3">
+                    <!-- <input type="text" class="form-control" id="floatingRole" placeholder="Role" formControlName="Role"[ngClass]="{ 'is-invalid': submitted && f.Role.errors }" id="inputRole4"> -->
+                    <select class="form-control" id="floatingExpenseType" placeholder="ExpenseType" formControlName="ExpenseType" [ngClass]="{ 'is-invalid': submitted && f.ExpenseType.errors }" id="inputExpenseType4">
+                      <option selected value="credit">Credit</option>
+                      <option value="debit">Debitt</option>
+                    </select>
+                    <div *ngIf="submitted && f.ExpenseType.errors" class="invalid-feedback">
+                      <div *ngIf="f.ExpenseType.errors.Role">Expense Type is required</div>
+                   </div>
+                    <label for="floatingExpenseType">Expense Type</label>
+                  </div>
+
+                  <div class="form-floating mb-3">
+                    <input type="number" class="form-control" id="floatingExpenseAmount" placeholder="ExpenseAmount" formControlName="ExpenseAmount" [ngClass]="{ 'is-invalid': submitted && f.ExpenseAmount.errors }" id="inputExpenseAmount4">
+                    <div *ngIf="submitted && f.ExpenseAmount.errors" class="invalid-feedback">
+                      <div *ngIf="f.ExpenseAmount.errors.required">Expense Amount is required</div>
+                   </div>
+                    <label for="floatingExpenseAmount">Expense Amount</label>
+                  </div>
+
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingExpenseReason" placeholder="ExpenseReason" formControlName="ExpenseReason" [ngClass]="{ 'is-invalid': submitted && f.ExpenseReason.errors }" id="inputExpenseReason4">
+                    <!-- <div *ngIf="submitted && f.ExpenseReason.errors" class="invalid-feedback">
+                      <div *ngIf="f.ExpenseReason.errors.required">Expense Reason is required</div>
+                   </div> -->
+                    <label for="floatingExpenseReason">Expense Reason</label>
+                  </div>
+
+                  <div class="form-floating mb-3">
+                    <input type="date" class="form-control" id="floatingExpenseDate" placeholder="dd-mm-yyyy" formControlName="ExpenseDate" [ngClass]="{ 'is-invalid': submitted && f.ExpenseDate.errors }" id="inputExpenseDate4">
+                    <!-- <div *ngIf="submitted && f.ExpenseDate.errors" class="invalid-feedback">
+                      <div *ngIf="f.ExpenseDate.errors.required">Expense Date is required</div>
+                   </div> -->
+                    <label for="floatingExpenseDate">Expense Date</label>
+                  </div>
+
+                  <div class="d-grid">
+                    <button class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2" type="submit">Save</button>
+                  </div>
+  
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
